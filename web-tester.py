@@ -85,12 +85,12 @@ def log_to_csv(timestamp, url, load_time, error):
 def main():
     print("Uruchamiam monitor z Firefoxem...")
 
-    with open(LOG_FILE, mode="w", newline="", encoding="utf-8") as file:
+    with open(LOG_FILE, mode="a", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
         writer.writerow(["timestamp", "url", "load_time_sec", "error"])
 
     if debugVerbose:
-        with open(VERBOSE_LOG_FILE, mode="w", encoding="utf-8") as f:
+        with open(VERBOSE_LOG_FILE, mode="a", encoding="utf-8") as f:
             f.write("=== Verbose zasoby stron (Firefox) ===\n\n")
 
     while True:
